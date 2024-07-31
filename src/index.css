@@ -1,51 +1,103 @@
+/* Base Styles */
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
+  font-family: "Century Gothic", Futura, sans-serif;
+  font-size: 14px;
+  margin: 20px;
+  padding: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Lists */
+ol, ul {
+  padding-left: 30px;
+}
+
+/* Clearfix for .board-row */
+.board-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Status Message */
+.status {
+  margin-bottom: 10px;
+}
+
+/* Square Styling */
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin: -1px 0 0 -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+  transition: background 0.3s;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+/* Game Layout */
+.game {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   .game {
-    display: flex;
-    flex-direction: row;
+      flex-direction: column;
+      align-items: center;
   }
-  
+
   .game-info {
-    margin-left: 20px;
+      margin-left: 0;
+      margin-top: 20px;
   }
-  
+}
+
+/* Button Styling */
+button {
+  padding: 5px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+  background-color: #c0c0c0;
+}
